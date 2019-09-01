@@ -2,9 +2,9 @@
 <html>
 <head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="utf-8">
-  <title>Ubantu上安装NS-3实践 | 坚持下去</title>
-  <meta name="keywords" content=" NS-3 , Ubantu ">
-  <meta name="description" content="Ubantu上安装NS-3实践 | 坚持下去">
+  <title>ubuntu下vi/vim的基本用法 | 坚持下去</title>
+  <meta name="keywords" content=" vim , ubuntu ">
+  <meta name="description" content="ubuntu下vi/vim的基本用法 | 坚持下去">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="description" content="SSR脚本安装1.在电脑端打开Putty，连接VPS服务器，以root用户登录。2.登录成功后，一次运行以下三条命令wget --no-check-certificate -O shadowsocks-all.sh https://raw.githubusercontent.com/teddysun/shadowsocks_install/master/shadowsocks-all.sh chm">
 <meta name="keywords" content="vpn">
@@ -264,9 +264,9 @@
 </aside>
 <div class="post">
     <div class="pjax">
-        <article id="post-Ubantu上安装NS-3实践" class="article article-type-post" itemscope itemprop="blogPost">
+        <article id="post-ubuntu下vi-vim的基本用法" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <h1 class="article-title">Ubantu上安装NS-3实践</h1>
+        <h1 class="article-title">ubuntu下vi/vim的基本用法</h1>
     
     <div class="article-meta">
         
@@ -274,23 +274,23 @@
         
         <span class="book">
             
-                <a href="javascript:" data-rel="NS-3">NS-3</a>
+                <a href="javascript:" data-rel="ubuntu">ubuntu</a>
             
         </span>
         
         
         <span class="tag">
             
-            <a href="javascript:" class="color5">NS-3</a>
+            <a href="javascript:" class="color4">vim</a>
             
-            <a href="javascript:" class="color2">Ubantu</a>
+            <a href="javascript:" class="color2">ubuntu</a>
             
         </span>
         
     </div>
     <div class="article-meta">
         
-        创建时间:<time class="date" title='更新时间: 2019-08-31 23:45:06'>2019-08-26 22:52</time>
+        创建时间:<time class="date" title='更新时间: 2019-09-01 23:39:45'>2019-09-01 23:27</time>
         
     </div>
     <div class="article-meta">
@@ -312,7 +312,7 @@
     
     <div class="toc-ref">
     
-        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Ⅰ-概述"><span class="toc-text">Ⅰ 概述</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Ⅱ-安装"><span class="toc-text">Ⅱ 安装</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#2-1-依赖软件包安装"><span class="toc-text">2.1 依赖软件包安装</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-2-建立工作目录"><span class="toc-text">2.2 建立工作目录</span></a></li></ol></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#1-简介"><span class="toc-text">1 简介</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#2-基本命令"><span class="toc-text">2 基本命令</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#2-1-打开文件、保存、关闭文件-vim命令模式下使用-是注释的意思"><span class="toc-text">2.1 打开文件、保存、关闭文件(vim命令模式下使用)// 是注释的意思</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-2-插入文本或行-vim命令模式下使用，执行下面命令后将进入插入模式，按ESC键可退出插入模式进入底行模式"><span class="toc-text">2.2 插入文本或行(vim命令模式下使用，执行下面命令后将进入插入模式，按ESC键可退出插入模式进入底行模式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-3-移动光标-vim命令模式下使用"><span class="toc-text">2.3 移动光标(vim命令模式下使用)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-4-删除、恢复字符或行-vim命令模式下使用"><span class="toc-text">2.4 删除、恢复字符或行(vim命令模式下使用)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-5-搜索-vim命令模式下使用"><span class="toc-text">2.5 搜索(vim命令模式下使用)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-6-跳至指定行-vim底行模式下使用"><span class="toc-text">2.6 跳至指定行(vim底行模式下使用)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-7-设置行号-vim命令模式下使用"><span class="toc-text">2.7 设置行号(vim命令模式下使用)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-8-复制、粘贴-vim命令模式下使用"><span class="toc-text">2.8 复制、粘贴(vim命令模式下使用)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-9-替换-vim命令模式下使用"><span class="toc-text">2.9 替换(vim命令模式下使用)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-10-编辑其他文件"><span class="toc-text">2.10 编辑其他文件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-11-修改文件格式"><span class="toc-text">2.11 修改文件格式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-12-查看当前行信息-vim命令模式下使用"><span class="toc-text">2.12 查看当前行信息(vim命令模式下使用)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-13-跳转到制定行-vim命令模式下使用"><span class="toc-text">2.13 跳转到制定行(vim命令模式下使用)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-14-vim-取消-查找-高亮"><span class="toc-text">2.14 vim 取消 查找 高亮</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-15-滚屏"><span class="toc-text">2.15 滚屏</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-16-移动"><span class="toc-text">2.16 移动</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-17-折叠"><span class="toc-text">2.17 折叠</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-18-函数折叠-命令模式"><span class="toc-text">2.18 函数折叠(命令模式)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-19-代码格式化"><span class="toc-text">2.19 代码格式化</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#自动缩进当前行"><span class="toc-text">自动缩进当前行</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#2-20-在函数中移动光标-命令模式"><span class="toc-text">2.20 在函数中移动光标(命令模式)</span></a></li></ol></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -327,28 +327,33 @@
 </div>
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="Ⅰ-概述"><a href="#Ⅰ-概述" class="headerlink" title="Ⅰ 概述"></a>Ⅰ 概述</h1><p>本文记录了NS-3模拟器在Ubuntu12.04桌面版上的完整安装记录。</p>
-<h1 id="Ⅱ-安装"><a href="#Ⅱ-安装" class="headerlink" title="Ⅱ 安装"></a>Ⅱ 安装</h1><p>NS-3的安装方法有两种，一种是利用bake工具自动化安装，另一种是手动安装，安装包的下载可以通过Mercurial或则是直接下载tar包。<br>由于Bake工具安装陷入超时，因此直接采用基于Mercurial的手动安装。</p>
-<h2 id="2-1-依赖软件包安装"><a href="#2-1-依赖软件包安装" class="headerlink" title="2.1 依赖软件包安装"></a>2.1 依赖软件包安装</h2><pre><code>apt-get install mercurial
-apt-get install qt4-dev-tools
-apt-get install gdb valgrind
-apt-get install gsl-bin libgsl0-dev libgsl0ldbl
-apt-get install flex bison libfl-dev
-apt-get install tcpdump
-apt-get install sqlite sqlite3 libsqlite3-dev
-apt-get install libxml2 libxml2-dev
-apt-get install libgtk2.0-0 libgtk2.0-dev
-apt-get install vtun lxc
-apt-get install uncrustify
-apt-get install doxygen graphviz imagemagick
-apt-get install python-sphinx dia
-apt-get install python-pygraphviz python-kiwi python-pygoocanvas libgoocanvas-dev
-apt-get install libboost-signals-dev libboost-filesystem-dev
-apt-get install openmpi-bin openmpi-common openmpi-doc libopenmpi-dev</code></pre><h2 id="2-2-建立工作目录"><a href="#2-2-建立工作目录" class="headerlink" title="2.2 建立工作目录"></a>2.2 建立工作目录</h2><pre><code>mkdir workspace
-cd workspace
-mkdir repos
-cd repos
-hg clone http://code.nsnam.org/ns-3-allinone</code></pre><p>生成ns-3-allinone目录</p>
+        <h1 id="1-简介"><a href="#1-简介" class="headerlink" title="1 简介"></a>1 简介</h1><p>vim是文本编辑器。代码补完、编译及错误跳转等方便编程的功能特别丰富，在程序员中被广泛使用。下面讲述一些必要的基本命令，而掌握好这些命令，您就能够很容易将vim当作一个通用的万能编辑器来使用了。<br>vim自带基础教程：在任意一台装有vim的机器上，命令行中输入vimtutor  然后就可以看到文档了。</p>
+<h1 id="2-基本命令"><a href="#2-基本命令" class="headerlink" title="2 基本命令"></a>2 基本命令</h1><p>包含vim的基本介绍、使用模式、文件的打开关闭保存、插入文本或新建行、移动光标、删除、恢复字符或行、搜索等等。<br>vim有3个模式：插入模式、命令模式、低行模式。<br>插入模式：在此模式下可以输入字符，按ESC将回到命令模式。<br>命令模式：可以移动光标、删除字符等。<br>低行模式：可以保存文件、退出vi、设置vi、查找等功能(低行模式也可以看作是命令模式里的)。按shift + : 进入插入模式</p>
+<h2 id="2-1-打开文件、保存、关闭文件-vim命令模式下使用-是注释的意思"><a href="#2-1-打开文件、保存、关闭文件-vim命令模式下使用-是注释的意思" class="headerlink" title="2.1 打开文件、保存、关闭文件(vim命令模式下使用)// 是注释的意思"></a>2.1 打开文件、保存、关闭文件(vim命令模式下使用)// 是注释的意思</h2><p>vi filename     //打开filename文件<br>:w           //保存文件<br>:w cszhi.com    //保存至cszhi.com文件<br>:q           //退出编辑器，如果文件已修改请使用下面的命令<br>:q!//退出编辑器，且不保存<br>:wq          //退出编辑器，且保存文件</p>
+<h2 id="2-2-插入文本或行-vim命令模式下使用，执行下面命令后将进入插入模式，按ESC键可退出插入模式进入底行模式"><a href="#2-2-插入文本或行-vim命令模式下使用，执行下面命令后将进入插入模式，按ESC键可退出插入模式进入底行模式" class="headerlink" title="2.2 插入文本或行(vim命令模式下使用，执行下面命令后将进入插入模式，按ESC键可退出插入模式进入底行模式"></a>2.2 插入文本或行(vim命令模式下使用，执行下面命令后将进入插入模式，按ESC键可退出插入模式进入底行模式</h2><p>a       //在当前光标位置的右边添加文本<br>i       //在当前光标位置的左边添加文本<br>A       //在当前行的末尾位置添加文本<br>I       //在当前行的开始处添加文本(非空字符的行首)<br>O       //在当前行的上面新建一行<br>o       //在当前行的下面新建一行<br>R       //替换(覆盖)当前光标位置及后面的若干文本<br>J       //合并光标所在行及下一行为一行(依然在命令模式)</p>
+<h2 id="2-3-移动光标-vim命令模式下使用"><a href="#2-3-移动光标-vim命令模式下使用" class="headerlink" title="2.3 移动光标(vim命令模式下使用)"></a>2.3 移动光标(vim命令模式下使用)</h2><p>①使用上下左右方向键<br>②命令模式下：<br>h   向左、j   向下、k   向上、l  向右。<br>空格键向右、Backspace向左、Enter移动到下一行首、-移动到上一行首。</p>
+<h2 id="2-4-删除、恢复字符或行-vim命令模式下使用"><a href="#2-4-删除、恢复字符或行-vim命令模式下使用" class="headerlink" title="2.4 删除、恢复字符或行(vim命令模式下使用)"></a>2.4 删除、恢复字符或行(vim命令模式下使用)</h2><p>x         //删除当前字符<br>nx        //删除从光标开始的n个字符<br>dd        //删除当前行<br>ndd        //向下删除当前行在内的n行<br>u         //撤销上一步操作<br>U         //撤销对当前行的所有操作</p>
+<h2 id="2-5-搜索-vim命令模式下使用"><a href="#2-5-搜索-vim命令模式下使用" class="headerlink" title="2.5 搜索(vim命令模式下使用)"></a>2.5 搜索(vim命令模式下使用)</h2><p>/cszhi    //向光标下搜索cszhi字符串<br>?cszhi    //向光标上搜索cszhi字符串<br>n         //向下搜索前一个搜素动作<br>N         //向上搜索前一个搜索动作</p>
+<h2 id="2-6-跳至指定行-vim底行模式下使用"><a href="#2-6-跳至指定行-vim底行模式下使用" class="headerlink" title="2.6 跳至指定行(vim底行模式下使用)"></a>2.6 跳至指定行(vim底行模式下使用)</h2><p>n+//向下跳n行<br>n-//向上跳n行<br>nG        //跳到行号为n的行<br>G         //跳至文件的底部</p>
+<h2 id="2-7-设置行号-vim命令模式下使用"><a href="#2-7-设置行号-vim命令模式下使用" class="headerlink" title="2.7 设置行号(vim命令模式下使用)"></a>2.7 设置行号(vim命令模式下使用)</h2><p>:set  nu     //显示行号<br>:set nonu    //取消显示行号</p>
+<h2 id="2-8-复制、粘贴-vim命令模式下使用"><a href="#2-8-复制、粘贴-vim命令模式下使用" class="headerlink" title="2.8 复制、粘贴(vim命令模式下使用)"></a>2.8 复制、粘贴(vim命令模式下使用)</h2><p>yy    //将当前行复制到缓存区，也可以用 “ayy 复制，”a 为缓冲区，a也可以替换为a到z的任意字母，可以完成多个复制任务<br>nyy   //将当前行向下n行复制到缓冲区，也可以用 “anyy 复制，”a 为缓冲区，a也可以替换为a到z的任意字母，可以完成多个复制任务<br>yw    //复制从光标开始到词尾的字符<br>nyw   //复制从光标开始的n个单词<br>y^    //复制从光标到行首的内容<br>y$    //复制从光标到行尾的内容<br>p     //粘贴剪切板里的内容在光标后，如果使用了前面的自定义缓冲区，建议使用”ap 进行粘贴<br>P     //粘贴剪切板里的内容在光标前，如果使用了前面的自定义缓冲区，建议使用”aP 进行粘贴</p>
+<h2 id="2-9-替换-vim命令模式下使用"><a href="#2-9-替换-vim命令模式下使用" class="headerlink" title="2.9 替换(vim命令模式下使用)"></a>2.9 替换(vim命令模式下使用)</h2><p>:s/old/new//用new替换行中首次出现的old<br>:s/old/new/g        //用new替换行中所有的old<br>:n,m s/old/new/g    //用new替换从n到m行里所有的old<br>:%s/old/new/g       //用new替换当前文件里所有的old</p>
+<h2 id="2-10-编辑其他文件"><a href="#2-10-编辑其他文件" class="headerlink" title="2.10 编辑其他文件"></a>2.10 编辑其他文件</h2><p>:e otherfilename    //编辑文件名为otherfilename的文件</p>
+<h2 id="2-11-修改文件格式"><a href="#2-11-修改文件格式" class="headerlink" title="2.11 修改文件格式"></a>2.11 修改文件格式</h2><p>:set fileformat=unix   //将文件修改为unix格式，如win下面的文本文件在linux下会出现^M</p>
+<h2 id="2-12-查看当前行信息-vim命令模式下使用"><a href="#2-12-查看当前行信息-vim命令模式下使用" class="headerlink" title="2.12 查看当前行信息(vim命令模式下使用)"></a>2.12 查看当前行信息(vim命令模式下使用)</h2><p>ctrl+g</p>
+<h2 id="2-13-跳转到制定行-vim命令模式下使用"><a href="#2-13-跳转到制定行-vim命令模式下使用" class="headerlink" title="2.13 跳转到制定行(vim命令模式下使用)"></a>2.13 跳转到制定行(vim命令模式下使用)</h2><p>number + shift  + g<br>如果没有输入number则跳转到末尾。1+shit+g行首。</p>
+<h2 id="2-14-vim-取消-查找-高亮"><a href="#2-14-vim-取消-查找-高亮" class="headerlink" title="2.14 vim 取消 查找 高亮"></a>2.14 vim 取消 查找 高亮</h2><p>:set hlsearch “打开高亮搜索<br>:set nohlsearch “关闭高亮搜索<br>:nohl “只取消掉当前的搜索高亮</p>
+<h2 id="2-15-滚屏"><a href="#2-15-滚屏" class="headerlink" title="2.15 滚屏"></a>2.15 滚屏</h2><p>ctrl+u\d  向上\下滚动半屏<br>ctrl+e\y  向上\下滚动一行<br>ctrl+b\f  向上\下滚动一屏</p>
+<h2 id="2-16-移动"><a href="#2-16-移动" class="headerlink" title="2.16 移动"></a>2.16 移动</h2><p>b、3b、w、3w:向前\后移动几个单词，标点也算一个单词。相应的大写状态为不含标点，即只把空格和换行符作为单词间隔符。<br>$(shift+4)：移动到行尾  3$：移动到3行后的行尾<br>0 行首有空格<br>^(shift+6):移动到行首，<br>+：移到下一行的行首<br>-： 移到上一行的行首</p>
+<h2 id="2-17-折叠"><a href="#2-17-折叠" class="headerlink" title="2.17 折叠"></a>2.17 折叠</h2><p>zc|关闭当前打开的折叠<br>zo|打开当前的折叠<br>zm|关闭所有折叠<br>zM|关闭所有折叠及其嵌套的折叠<br>zr|打开所有折叠<br>zR|打开所有折叠及其嵌套的折叠<br>zd|删除当前折叠<br>zE|删除所有折叠<br>zj|移动至下一个折叠<br>zk|移动至上一个折叠<br>zn|禁用折叠<br>zN|启用折叠</p>
+<h2 id="2-18-函数折叠-命令模式"><a href="#2-18-函数折叠-命令模式" class="headerlink" title="2.18 函数折叠(命令模式)"></a>2.18 函数折叠(命令模式)</h2><p>zf</p>
+<p>shift+%</p>
+<h2 id="2-19-代码格式化"><a href="#2-19-代码格式化" class="headerlink" title="2.19 代码格式化"></a>2.19 代码格式化</h2><p>格式化全文<br>gg=G</p>
+<h1 id="自动缩进当前行"><a href="#自动缩进当前行" class="headerlink" title="自动缩进当前行"></a>自动缩进当前行</h1><p>格式化当前光标接下来的10行<br>10=j </p>
+<p>格式化当前光标向上的10行<br>10=k </p>
+<p>格式化选定的行<br>v（向上下选择）<br>=</p>
+<p>命令解释<br>gg    #跳转到文件首行<br>=     #应用缩进格式<br>G     #直到文件结束</p>
+<h2 id="2-20-在函数中移动光标-命令模式"><a href="#2-20-在函数中移动光标-命令模式" class="headerlink" title="2.20 在函数中移动光标(命令模式)"></a>2.20 在函数中移动光标(命令模式)</h2><p>[{ 转到上一个位于第一列的”{“<br>}] 转到下一个位于第一列的”{“<br>{    转到上一个空行<br>}    转到下一个空行<br>gd 转到当前光标所指的局部变量的定义<br>(*)    转到当前光标所指的单词下一次出现的地方<br>(#)    转到当前光标所指的单词上一次出现的地方</p>
 
       
        <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至 1207811450@qq.com </span>
@@ -362,12 +367,12 @@ hg clone http://code.nsnam.org/ns-3-allinone</code></pre><p>生成ns-3-allinone�
 
 
 <div class="article_copyright">
-    <p><span class="copy-title">文章标题:</span>Ubantu上安装NS-3实践</p>
+    <p><span class="copy-title">文章标题:</span>ubuntu下vi/vim的基本用法</p>
     
     <p><span class="copy-title">本文作者:</span><a href="javascript:void(0)" title="Wd">Wd</a></p>
-    <p><span class="copy-title">发布时间:</span>2019-08-26, 22:52:20</p>
-    <p><span class="copy-title">最后更新:</span>2019-08-31, 23:45:06</p>
-    <span class="copy-title">原始链接:</span><a class="post-url" href="/2019/08/26/Ubantu上安装NS-3实践/" title="Ubantu上安装NS-3实践">http://yoursite.com/2019/08/26/Ubantu上安装NS-3实践/</a>
+    <p><span class="copy-title">发布时间:</span>2019-09-01, 23:27:02</p>
+    <p><span class="copy-title">最后更新:</span>2019-09-01, 23:39:45</p>
+    <span class="copy-title">原始链接:</span><a class="post-url" href="/2019/09/01/ubuntu下vi-vim的基本用法/" title="ubuntu下vi/vim的基本用法">http://yoursite.com/2019/09/01/ubuntu下vi-vim的基本用法/</a>
     <p>
         <span class="copy-title">版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
     </p>
