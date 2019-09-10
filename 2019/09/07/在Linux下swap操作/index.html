@@ -2,9 +2,9 @@
 <html>
 <head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="utf-8">
-  <title>坚持下去</title>
-  <meta name="keywords" content>
-  <meta name="description" content="坚持下去">
+  <title>在Linux下swap操作 | 坚持下去</title>
+  <meta name="keywords" content=" linux , swap ">
+  <meta name="description" content="在Linux下swap操作 | 坚持下去">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="description" content="在虚拟环境里使用“django-admin.py startproject learning_log .”命令创建项目，发现无法创建，同时没有任何报错。在网上查了各种方法，最后解决方式如下：1、在创建的虚拟环境文件夹中找到“django-admin.py”文件。路径通常为“ ‘虚拟环境名称’\Lib\site-packages\django\bin ” 2、将该文件的打开方式设置为：使用pytho">
 <meta name="keywords" content="python,django">
@@ -59,7 +59,7 @@
 </div>
 
 <body>
-<aside class="nav mobile">
+<aside class="nav">
     <div class="nav-left">
         <a href="/" class="avatar_target">
     <img class="avatar" src="/img/avatar.jpg" />
@@ -360,12 +360,57 @@
         </div>
     </div>
 </aside>
-<div class="post index">
+<div class="post">
     <div class="pjax">
-        <article class="index">
-            <div class="toc-ref">
+        <article id="post-在Linux下swap操作" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Why-Blog"><span class="toc-text">Why Blog</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#对博客的理解"><span class="toc-text">对博客的理解</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#关于叶落阁"><span class="toc-text">关于叶落阁</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#博客平台"><span class="toc-text">博客平台</span></a></li></ol></li></ol>
+        <h1 class="article-title">在Linux下swap操作</h1>
+    
+    <div class="article-meta">
+        
+        
+        
+        <span class="book">
+            
+                <a href="javascript:" data-rel="linux">linux</a>
+            
+        </span>
+        
+        
+        <span class="tag">
+            
+            <a href="javascript:" class="color1">linux</a>
+            
+            <a href="javascript:" class="color5">swap</a>
+            
+        </span>
+        
+    </div>
+    <div class="article-meta">
+        
+        创建时间:<time class="date" title='更新时间: 2019-09-07 16:31:58'>2019-09-07 15:48</time>
+        
+    </div>
+    <div class="article-meta">
+        
+        
+        <span id="busuanzi_container_page_pv">
+            阅读:<span id="busuanzi_value_page_pv">
+                <span class="count-comment">
+                    <span class="spinner">
+                      <div class="cube1"></div>
+                      <div class="cube2"></div>
+                    </span>
+                </span>
+            </span>
+        </span>
+        
+        
+    </div>
+    
+    <div class="toc-ref">
+    
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#第一步-首先确认是否添加过swap分区"><span class="toc-text">第一步 首先确认是否添加过swap分区</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#第二步-创建Swap分区"><span class="toc-text">第二步 创建Swap分区</span></a></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -378,36 +423,55 @@
     }
 </style>
 </div>
-            <h1 id="Why-Blog"><a href="#Why-Blog" class="headerlink" title="Why Blog"></a>Why Blog</h1><h2 id="对博客的理解"><a href="#对博客的理解" class="headerlink" title="对博客的理解"></a>对博客的理解</h2><p>喜欢写Blog的人，会经历三个阶段。</p>
-<blockquote>
-<p>第一阶段，刚接触Blog，觉得很新鲜，试着选择一个免费空间来写。</p>
-</blockquote>
-<blockquote>
-<p>第二阶段，发现免费空间限制太多，就自己购买域名和空间，搭建独立博客。</p>
-</blockquote>
-<blockquote>
-<p>第三阶段，觉得独立博客的管理太麻烦，最好在保留控制权的前提下，让别人来管，自己只负责写文章。</p>
-</blockquote>
-<p>我们每个人的在网络上产生的数据越来越多，这些信息是我们在互联网上存在过的痕迹，值得我们认真对待。但是它们被分散分布在各个网站上。很多时候我们很难将它们聚合在一起，而且各个网站的信息排布方式也没有办法自由控制，所以我们需要一个可以由自己主宰的空间——博客。</p>
-<p>通过博客，我们可以记录自己的生活和成长的轨迹。它不像 Twitter 那样碎片化，也不像 Facebook 那样关系化，它是私人的空间。</p>
-<h2 id="关于叶落阁"><a href="#关于叶落阁" class="headerlink" title="关于叶落阁"></a>关于叶落阁</h2><p><strong>叶落阁</strong> 是阿杰（杨玉杰）的个人站。</p>
-<p>到目前为止已经写了<code class="article_number"></code>篇文章， 共<code class="site_word_count"></code>字。</p>
-<p>本站访问人数：<code class="site_uv"></code>人次 ， 访问量：<code class="site_pv"></code>次</p>
-<h2 id="博客平台"><a href="#博客平台" class="headerlink" title="博客平台"></a>博客平台</h2><p>这个博客通过 <a href="https://hexo.io/">Hexo</a> 生成，部署在 <a href="https://pages.github.com/">GitHub Pages</a>，主题 <a href="https://github.com/yelog/hexo-theme-3-hexo">3-hexo</a> 已经在github上开源</p>
-<p>主要功能：</p>
-<ul>
-<li>搜索支持文章标题、标签(#标签)、作者(@作者)</li>
-<li>pad/手机等移动端适配</li>
-<li>页面全局快捷键 <a href='http://yelog.org/2017/03/24/3-hexo-shortcuts/'>3-hexo快捷键说明</a></li>
-</ul>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="第一步-首先确认是否添加过swap分区"><a href="#第一步-首先确认是否添加过swap分区" class="headerlink" title="第一步 首先确认是否添加过swap分区"></a>第一步 首先确认是否添加过swap分区</h1><p>为了防止出现任何以外，请先看一下内存中是否已经有swap:<br><code>free -m</code><br>一般情况下运行命令后会出现如下的内容:</p>
+<pre><code>total              used       free     shared    buffers     cached
+Mem:               1840       1614     226       15          36       1340
+-/+ buffers/cache:            238      1602
+Swap:              0          0        0
+</code></pre><p>如果你看到 <code>Swap</code> 分区中是0的话，那么就可以接着看第二步</p>
+<p>如果不是的话说明你已经有了swap分区，你可以通过下面的命令查看swap文件:<br><code>swapon -s</code></p>
+<h1 id="第二步-创建Swap分区"><a href="#第二步-创建Swap分区" class="headerlink" title="第二步 创建Swap分区"></a>第二步 创建Swap分区</h1><p>使用dd来创建一个空的swap文件（2G为例）:<br><code>dd if=/dev/zero of=/swapfile count=2048 bs=1M</code><br>其中 <code>dd</code> 命令的内容可以按自己的需求修改:</p>
+<p>if =输入文件（或设备名称）。<br>of =输出文件（或设备名称）。<br>ibs = bytes 一次读取bytes字节，即读入缓冲区的字节数。<br>skip = blocks 跳过读入缓冲区开头的ibs*blocks块。<br>obs = bytes 一次写入bytes字节，即写入缓冲区的字节数。<br>bs = bytes 同时设置读/写缓冲区的字节数（等于设置ibs和obs）。<br>cbs = byte 一次转换bytes字节。<br>count=blocks 只拷贝输入的blocks块。</p>
+<p>然后你应该会看到如下的反馈：</p>
+<pre><code>2048+0 records in
+2048+0 records out
+2147483648 bytes (2.1 GB) copied, 10.5356 s, 204 MB/s
+</code></pre><p>然后我们来验证一下是否已经生成完成:<br><code>ls / | grep swapfile</code><br>如果正常生成的话你可以看到 swapfile 文件</p>
 
-        </article>
-        
-        <p>
-            <a href="javascript:void(0)" class="dashang" onclick="dashangToggle()">赏</a>
-        </p>
-        
-        
+      
+       <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至 1207811450@qq.com </span>
+    </div>
+</article>
+
+
+<p>
+    <a href="javascript:void(0)" class="dashang" onclick="dashangToggle()">赏</a>
+</p>
+
+
+<div class="article_copyright">
+    <p><span class="copy-title">文章标题:</span>在Linux下swap操作</p>
+    
+    <p><span class="copy-title">本文作者:</span><a href="javascript:void(0)" title="Wd">Wd</a></p>
+    <p><span class="copy-title">发布时间:</span>2019-09-07, 15:48:28</p>
+    <p><span class="copy-title">最后更新:</span>2019-09-07, 16:31:58</p>
+    <span class="copy-title">原始链接:</span><a class="post-url" href="/2019/09/07/在Linux下swap操作/" title="在Linux下swap操作">http://yoursite.com/2019/09/07/在Linux下swap操作/</a>
+    <p>
+        <span class="copy-title">版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
+    </p>
+</div>
+
+
+
+
+
+    
+
+
+
+
     </div>
     <div class="copyright">
         <p class="footer-entry">©2016-2019 Yelog</p>
