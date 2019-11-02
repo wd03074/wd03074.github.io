@@ -2,9 +2,9 @@
 <html>
 <head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="utf-8">
-  <title>Ubantu上安装NS-3实践 | 坚持下去</title>
-  <meta name="keywords" content=" NS-3 , Ubantu ">
-  <meta name="description" content="Ubantu上安装NS-3实践 | 坚持下去">
+  <title>SQL语法约定 | 坚持下去</title>
+  <meta name="keywords" content=" SQL , 语法约定 ">
+  <meta name="description" content="SQL语法约定 | 坚持下去">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="description" content="语法约定 每个SQL语句开始于新行。 每次缩进为2个字符。 每个语句的子句开始于新的缩进的行。SELECT au_fname, an_lnameFROM authorsORDER BY au_lname; SQL是不区分大小写的。对于SQL关键字（如SELECT，NULL和CHARACTER）使用大写；对于用户定于的值（如表、列和别名）使用小写。 当一行太窄而无法容纳一整行代码或输出时，将其分为两">
 <meta name="keywords" content="SQL,语法约定">
@@ -412,9 +412,9 @@
 </aside>
 <div class="post">
     <div class="pjax">
-        <article id="post-Ubantu上安装NS-3实践" class="article article-type-post" itemscope itemprop="blogPost">
+        <article id="post-SQL语法约定" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <h1 class="article-title">Ubantu上安装NS-3实践</h1>
+        <h1 class="article-title">SQL语法约定</h1>
     
     <div class="article-meta">
         
@@ -422,23 +422,23 @@
         
         <span class="book">
             
-                <a href="javascript:" data-rel="NS-3">NS-3</a>
+                <a href="javascript:" data-rel="SQL">SQL</a>
             
         </span>
         
         
         <span class="tag">
             
-            <a href="javascript:" class="color5">NS-3</a>
+            <a href="javascript:" class="color4">SQL</a>
             
-            <a href="javascript:" class="color2">Ubantu</a>
+            <a href="javascript:" class="color5">语法约定</a>
             
         </span>
         
     </div>
     <div class="article-meta">
         
-        创建时间:<time class="date" title='更新时间: 2019-09-07 17:08:29'>2019-08-26 22:52</time>
+        创建时间:<time class="date" title='更新时间: 2019-11-02 10:16:52'>2019-11-02 10:15</time>
         
     </div>
     <div class="article-meta">
@@ -460,7 +460,7 @@
     
     <div class="toc-ref">
     
-        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Ⅰ-概述"><span class="toc-text">Ⅰ 概述</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Ⅱ-安装"><span class="toc-text">Ⅱ 安装</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#2-1-依赖软件包安装"><span class="toc-text">2.1 依赖软件包安装</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-2-下载"><span class="toc-text">2.2 下载</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Ⅲ-配置编译"><span class="toc-text">Ⅲ 配置编译</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#3-1-首次进行编译"><span class="toc-text">3.1 首次进行编译</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-2-不是首次进行配置编译的时候配置编译"><span class="toc-text">3.2 不是首次进行配置编译的时候配置编译</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Ⅳ-测试ns3编译是否编译正确"><span class="toc-text">Ⅳ 测试ns3编译是否编译正确</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#第一-利用test-py脚本进行测试"><span class="toc-text">第一 利用test.py脚本进行测试</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#第二-利用编写的脚本测试"><span class="toc-text">第二 利用编写的脚本测试</span></a></li></ol></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#语法约定"><span class="toc-text">语法约定</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#标识符命名规则。"><span class="toc-text">标识符命名规则。</span></a></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -475,87 +475,21 @@
 </div>
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="Ⅰ-概述"><a href="#Ⅰ-概述" class="headerlink" title="Ⅰ 概述"></a>Ⅰ 概述</h1><p>本文记录了NS-3模拟器在Ubuntu12.04桌面版上的完整安装记录。</p>
-<h1 id="Ⅱ-安装"><a href="#Ⅱ-安装" class="headerlink" title="Ⅱ 安装"></a>Ⅱ 安装</h1><p>NS-3的安装方法有两种，一种是利用bake工具自动化安装，另一种是手动安装，安装包的下载可以通过Mercurial或则是直接下载tar包。<br>由于Bake工具安装陷入超时，因此直接采用基于Mercurial的手动安装。</p>
-<h2 id="2-1-依赖软件包安装"><a href="#2-1-依赖软件包安装" class="headerlink" title="2.1 依赖软件包安装"></a>2.1 依赖软件包安装</h2><pre><code>apt-get install mercurial
-apt-get install qt4-dev-tools
-apt-get install gdb valgrind
-apt-get install gsl-bin libgsl0-dev libgsl0ldbl  //这句在执行时出现错误，后边会解释
-apt-get install flex bison libfl-dev
-apt-get install tcpdump
-apt-get install sqlite sqlite3 libsqlite3-dev
-apt-get install libxml2 libxml2-dev
-apt-get install libgtk2.0-0 libgtk2.0-dev
-apt-get install vtun lxc
-apt-get install uncrustify
-apt-get install doxygen graphviz imagemagick
-apt-get install python-sphinx dia
-apt-get install python-pygraphviz python-kiwi python-pygoocanvas libgoocanvas-dev
-apt-get install libboost-signals-dev libboost-filesystem-dev
-apt-get install openmpi-bin openmpi-common openmpi-doc libopenmpi-dev
-</code></pre><p><strong>安装软件包遇到的问题:</strong><br>（1） 在执行第4句命令的时候出现以下错误提示：<br><img src="https://img-blog.csdn.net/20180308135959720" alt></p>
-<p>这个时候我们只需要根据提示改正就好，第一步提示选中“libgsl-dev”而非“libgsl0-dev”，我们原命令的“libgsl0-dev”替换成“libgsl-dev”就可以。还有一个错误，libgsl0ldbl这个软件包不存在，但是提示有东西可以替换，果断安装可以替换它的软件包，问题解决。</p>
-<h2 id="2-2-下载"><a href="#2-2-下载" class="headerlink" title="2.2 下载"></a>2.2 下载</h2><pre><code>cd
-mkdir tarballs
-cd tarballs
-wget http://www.nsnam.org/release/ns-allinone-3.27.tar.bz2
-tar -xjvf ns-allinone-3.27.tar.bz2
-</code></pre><h1 id="Ⅲ-配置编译"><a href="#Ⅲ-配置编译" class="headerlink" title="Ⅲ 配置编译"></a>Ⅲ 配置编译</h1><h2 id="3-1-首次进行编译"><a href="#3-1-首次进行编译" class="headerlink" title="3.1 首次进行编译"></a>3.1 首次进行编译</h2><p>安装的时候我们把下面的步骤执行一遍。</p>
-<p>NS-3的编译借助build.py脚本工具。在ns-allinone-3.27文件夹下运行：<br><code>./build.py</code><br>注意权限问题，有可能需要输入<code>sudo ./build.py</code></p>
-<p>有可能会碰到如下错误：</p>
-<pre><code>[1459/1770] cxx: src/lte/model/lte-ffr-sap.cc -&gt; build/src/lte/model/lte-ffr-sap.cc.1.o
-[1460/1770] cxx: src/lte/model/lte-fr-no-op-algorithm.cc -&gt; build/src/lte/model/lte-fr-no-op-algorithm.cc.1.o
-[1461/1770] cxx: src/lte/model/lte-ffr-soft-algorithm.cc -&gt; build/src/lte/model/lte-ffr-soft-algorithm.cc.1.o
-[1462/1770] cxx: src/lte/model/lte-ue-power-control.cc -&gt; build/src/lte/model/lte-ue-power-control.cc.1.o
-[1463/1770] cxx: build/src/lte/bindings/ns3module.cc -&gt; build/src/lte/bindings/ns3module.cc.7.o
-g++: internal compiler error: Killed (program cc1plus)
-Please submit a full bug report,
-with preprocessed source if appropriate.
-See  for instructions.
-Waf: Leaving directory `/home/fyang/project/workspace/repos/ns-3-allinone/ns-3-dev/build&#39;
-Build failed
- -&gt; task in &#39;ns3module_lte&#39; failed (exit status 4): 
-    {task 159048492: cxx ns3module.cc -&gt; ns3module.cc.7.o}
-[&#39;/usr/bin/g++&#39;, &#39;-O0&#39;, &#39;-ggdb&#39;, &#39;-g3&#39;, &#39;-Wall&#39;, &#39;-Werror&#39;, &#39;-Wno-error=deprecated-declarations&#39;, &#39;-fstrict-alid&#39;, &#39;-fno-strict-aliasing&#39;, &#39;-fwrapv&#39;, &#39;-fstack-protector&#39;, &#39;-fno-strict-aliasing&#39;, &#39;-fvisibility=hidden&#39;, &#39;-Wn, &#39;-I..&#39;, &#39;-Isrc/lte/bindings&#39;, &#39;-I../src/lte/bindings&#39;, &#39;-I/usr/include/python2.7&#39;, &#39;-I/usr/include/gtk-2.0&#39;, -I/usr/include/atk-1.0&#39;, &#39;-I/usr/include/cairo&#39;, &#39;-I/usr/include/gdk-pixbuf-2.0&#39;, &#39;-I/usr/include/pango-1.0&#39;, &#39;glib-2.0&#39;, &#39;-I/usr/lib/i386-linux-gnu/glib-2.0/include&#39;, &#39;-I/usr/include/pixman-1&#39;, &#39;-I/usr/include/freetype2&#39;,bxml2&#39;, &#39;-DNS3_ASSERT_ENABLE&#39;, &#39;-DNS3_LOG_ENABLE&#39;, &#39;-DHAVE_SYS_IOCTL_H=1&#39;, &#39;-DHAVE_IF_NETS_H=1&#39;, &#39;-DHAVE_NET_ETTE3=1&#39;, &#39;-DHAVE_IF_TUN_H=1&#39;, &#39;-DHAVE_GSL=1&#39;, &#39;-DNS_DEPRECATED=&#39;, &#39;-DNS3_DEPRECATED_H&#39;, &#39;-DNDEBUG&#39;, &#39;src/lte/binings/ns3module.cc.7.o&#39;]
-Traceback (most recent call last):
-  File &quot;./build.py&quot;, line 170, in 
-    sys.exit(main(sys.argv))
-  File &quot;./build.py&quot;, line 161, in main
-    build_ns3(config, build_examples, build_tests, args, build_options)
-  File &quot;./build.py&quot;, line 81, in build_ns3
-    run_command([sys.executable, &quot;waf&quot;, &quot;build&quot;] + build_options)
-  File &quot;/home/fyang/project/workspace/repos/ns-3-allinone/util.py&quot;, line 24, in run_command
-    raise CommandError(&quot;Command %r exited with code %i&quot; % (argv, retval))
-util.CommandError: Command [&#39;/usr/bin/python&#39;, &#39;waf&#39;, &#39;build&#39;] exited with code 1
-</code></pre><p>似乎是g++编译器自身的问题，个人猜测是内存不够，解决办法是添加swap分区（虚拟内存）。</p>
-<pre><code>sudo dd if=/dev/zero of=/swapfile bs=64M count=16
-sudo mkswap /swapfile
-sudo swapon /swapfile
-</code></pre><p>编译完成后删除：</p>
-<pre><code>sudo swapoff /swapfile
-sudo rm /swapfile
-</code></pre><p><strong>PS</strong>:使用命令sudo ./build.py编译安装ns-3安装包一般是我们第一次安装ns-3的时候使用的命令，这是allinone环境下的的build.py脚本，是一个Python脚本。一旦我们第一次编译过后，我们之后就要使用waf编译。</p>
-<h2 id="3-2-不是首次进行配置编译的时候配置编译"><a href="#3-2-不是首次进行配置编译的时候配置编译" class="headerlink" title="3.2 不是首次进行配置编译的时候配置编译"></a>3.2 不是首次进行配置编译的时候配置编译</h2><p>这是两个过程，我们先进行配置ns3过程，再进行编译ns3过程。</p>
-<p>使用waf编译安装(waf命令是交互式的，是基于python语言的开源编译系统。一旦我们用sudo ./build.py命令编译安装过ns-3，再想重新配置和编译就只能用waf命令。需要注意的是waf命令配置时是在目录<strong>ns-3.27</strong>下)</p>
-<pre><code>cd ns-3.27
-sudo ./waf clean   //清除先前的配置编译
-sudo ./waf -d debug --enable-example --enable-tests configure   //基于waf的配置调试方式
-</code></pre><p>执行sudo ./waf -d debug –enable-example –enable-tests configure命令具体作用是：配置ns-3，优化编译自己添加的例子和测试（那些系统自带默认的例子和测试是不编译的），然后系统进行重新配置，编译系统会检查ns3依赖的软件包是否成功安装。</p>
-<p>在配置信息的最后会列出一个当前ns-3系统特性的摘要，第一列是ns3里的模块名称，第二列是系统是否支持这些模块，如果系统不支持该模块会在后边的括号里列出系统不支持的原因。因此，如果我们想安装不成功的模块，比如前边的（brite,click,openflow）可以根据原因在配置的时候加入相应的选项或者下载模块依赖的软件包。系统特性摘要截图：<br><img src="https://img-blog.csdn.net/20180308145502976" alt><br><img src="https://img-blog.csdn.net/20180308145534649" alt><br>可以很明显的看到最后一句提示语：’configure’ finished successfully (1m23.455s)，说明我们完成了配置ns3的过程。下面我们要进行正式编译ns3的过程。</p>
-<p>执行命令 <code>sudo ./waf</code> ，执行后的截图如下：<br><img src="https://img-blog.csdn.net/20180308155106416" alt><br>可以看到和执行的步骤一的现象基本一样</p>
-<h1 id="Ⅳ-测试ns3编译是否编译正确"><a href="#Ⅳ-测试ns3编译是否编译正确" class="headerlink" title="Ⅳ 测试ns3编译是否编译正确"></a>Ⅳ 测试ns3编译是否编译正确</h1><p>介绍两种测试方法</p>
-<h2 id="第一-利用test-py脚本进行测试"><a href="#第一-利用test-py脚本进行测试" class="headerlink" title="第一 利用test.py脚本进行测试"></a>第一 利用test.py脚本进行测试</h2><p>这是利用python语言编写的。</p>
-<pre><code>cd ns-3.27
-sudo ./test.py –c core
-</code></pre><p>该脚本是waf并行执行，可以看到执行过程中出现一堆的PASS…（执行过程很长，几十分钟）最后一行显示测试的结果，总共测试的数量和测试通过的脚本数量。</p>
-<h2 id="第二-利用编写的脚本测试"><a href="#第二-利用编写的脚本测试" class="headerlink" title="第二 利用编写的脚本测试"></a>第二 利用编写的脚本测试</h2><p><code>sudo ./waf  --run hello-simulator</code><br>编译成功后就会会打印”hello simulator”，表示NS3安装成功了！</p>
-<p><strong>说明</strong>：如果没有看到输出“Hello Simulator”，说明你是在优化编译模式下进行的编译，在优化编译模式下，默认将关闭控制台输出。可以通过以下改变3.2中的命令sudo ./waf -d optimized –enable-example –enable-tests configure 的参数optimized改为debug后变为sudo ./waf -d debug –enable-example –enable-tests configure 重新配置编译就可以。</p>
-<p>具体指令是：</p>
-<pre><code>cd ns-3.27
-sudo ./waf clean   //清除先前的配置编译
-sudo ./waf -d debug --enable-example --enable-tests configure   //基于waf的配置调试方式
-sudo ./waf 
-</code></pre>
+        <h2 id="语法约定"><a href="#语法约定" class="headerlink" title="语法约定"></a>语法约定</h2><ol>
+<li>每个SQL语句开始于新行。</li>
+<li>每次缩进为2个字符。</li>
+<li>每个语句的子句开始于新的缩进的行。<br>SELECT au_fname, an_lname<br>FROM authors<br>ORDER BY au_lname;</li>
+<li>SQL是不区分大小写的。对于SQL关键字（如SELECT，NULL和CHARACTER）使用大写；对于用户定于的值（如表、列和别名）使用小写。</li>
+<li>当一行太窄而无法容纳一整行代码或输出时，将其分为两段或两段以上；箭头→表示行的继续。</li>
+</ol>
+<h2 id="标识符命名规则。"><a href="#标识符命名规则。" class="headerlink" title="标识符命名规则。"></a>标识符命名规则。</h2><ol>
+<li>可以长达128个字符。</li>
+<li>必须以字母开头。</li>
+<li>可以包含字母、数字和下划线（_）。</li>
+<li>不可以包含恐吓或特殊字符（如#、￥、&amp;、%或标点符号）‘</li>
+<li>不可以是保留关键字（除了被引号括起来的标识符以外）。</li>
+</ol>
+
       
        <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至 1207811450@qq.com </span>
     </div>
@@ -568,12 +502,12 @@ sudo ./waf
 
 
 <div class="article_copyright">
-    <p><span class="copy-title">文章标题:</span>Ubantu上安装NS-3实践</p>
+    <p><span class="copy-title">文章标题:</span>SQL语法约定</p>
     
     <p><span class="copy-title">本文作者:</span><a href="javascript:void(0)" title="Wd">Wd</a></p>
-    <p><span class="copy-title">发布时间:</span>2019-08-26, 22:52:20</p>
-    <p><span class="copy-title">最后更新:</span>2019-09-07, 17:08:29</p>
-    <span class="copy-title">原始链接:</span><a class="post-url" href="/2019/08/26/Ubantu上安装NS-3实践/" title="Ubantu上安装NS-3实践">http://yoursite.com/2019/08/26/Ubantu上安装NS-3实践/</a>
+    <p><span class="copy-title">发布时间:</span>2019-11-02, 10:15:30</p>
+    <p><span class="copy-title">最后更新:</span>2019-11-02, 10:16:52</p>
+    <span class="copy-title">原始链接:</span><a class="post-url" href="/2019/11/02/SQL语法约定/" title="SQL语法约定">http://yoursite.com/2019/11/02/SQL语法约定/</a>
     <p>
         <span class="copy-title">版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
     </p>
