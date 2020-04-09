@@ -2,9 +2,9 @@
 <html>
 <head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="utf-8">
-  <title>Ubuntu 常用命令大全 | 坚持下去</title>
-  <meta name="keywords" content=" ubuntu ">
-  <meta name="description" content="Ubuntu 常用命令大全 | 坚持下去">
+  <title>我真的太难了 | 坚持下去</title>
+  <meta name="keywords" content>
+  <meta name="description" content="我真的太难了 | 坚持下去">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="description" content="语法约定 每个SQL语句开始于新行。 每次缩进为2个字符。 每个语句的子句开始于新的缩进的行。SELECT au_fname, an_lnameFROM authorsORDER BY au_lname; SQL是不区分大小写的。对于SQL关键字（如SELECT，NULL和CHARACTER）使用大写；对于用户定于的值（如表、列和别名）使用小写。 当一行太窄而无法容纳一整行代码或输出时，将其分为两">
 <meta name="keywords" content="SQL,语法约定">
@@ -420,31 +420,19 @@
 </aside>
 <div class="post">
     <div class="pjax">
-        <article id="post-Ubuntu-常用命令大全长期不定时更新" class="article article-type-post" itemscope itemprop="blogPost">
+        <article id="post-我真的太难了" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <h1 class="article-title">Ubuntu 常用命令大全</h1>
+        <h1 class="article-title">我真的太难了</h1>
     
     <div class="article-meta">
         
         
         
-        <span class="book">
-            
-                <a href="javascript:" data-rel="ubuntu">ubuntu</a>
-            
-        </span>
-        
-        
-        <span class="tag">
-            
-            <a href="javascript:" class="color2">ubuntu</a>
-            
-        </span>
         
     </div>
     <div class="article-meta">
         
-        创建时间:<time class="date" title='更新时间: 2019-09-04 23:09:10'>2019-09-01 23:49</time>
+        创建时间:<time class="date" title='更新时间: 2020-04-09 20:14:42'>2020-04-09 20:13</time>
         
     </div>
     <div class="article-meta">
@@ -466,7 +454,7 @@
     
     <div class="toc-ref">
     
-        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#1-系统相关"><span class="toc-text">1. 系统相关</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#2-用户及权限管理"><span class="toc-text">2. 用户及权限管理</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#3-软件安装"><span class="toc-text">3.软件安装</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#4-目录文件操作"><span class="toc-text">4. 目录文件操作</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#5-终端快捷键"><span class="toc-text">5. 终端快捷键</span></a></li></ol>
+        
     
 <style>
     .left-col .switch-btn,
@@ -481,103 +469,7 @@
 </div>
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="1-系统相关"><a href="#1-系统相关" class="headerlink" title="1. 系统相关"></a>1. 系统相关</h1><ul>
-<li><code>uname -a</code> 显示当前系统相关信息</li>
-<li><code>sudo</code> 临时获取超级用户权限</li>
-<li><code>su root</code> 切换 root 用户</li>
-<li><code>sudo shutdown</code> 关机</li>
-<li><code>sudo reboot</code> 重启</li>
-<li><code>sudo nautilus</code> 进入有 root 权限的文件管理器</li>
-<li><code>ps -A</code> 查看当前有哪些进程</li>
-<li><code>kill 5位进程号</code> 结束进程</li>
-<li><code>sudo fdisk -l</code> 查看磁盘信息</li>
-<li><code>sudo mount /dev/sdb1 /mnt</code> 挂载磁盘到某一路径</li>
-<li><code>sudo mount -r /dev/sdb1 /mnt/</code> 以只读方式挂载</li>
-<li><code>sudo umount /dev/sdb1</code> 卸载磁盘</li>
-<li><code>sudo blkid</code> 查看磁盘分区的 UUID</li>
-<li><code>sudo vi /etc/fstab</code> 开机自动挂载磁盘</li>
-</ul>
-<pre><code>UUID=11263962-9715-473f-9421-0b604e895aaa /data ext4 defaults 0 1
-sudo mount -a 验证一下配置是否正确
-</code></pre><ul>
-<li><code>efibootmgr</code> 查看系统启动顺序</li>
-<li><code>ifconfig</code> 网络配置，IP 地址查看</li>
-<li><code>man command-name</code> 查找命令详细手册</li>
-<li><code>command-name --help</code> 查找某一命令的帮助</li>
-</ul>
-<pre><code>(设置静态 IP 地址)
-sudo vi /etc/network/interfaces
-添加以下内容
-auto enp129s0f1
-iface enp129s0f1 inet static
-address 192.168.1.254 # IP 地址
-gateway 192.168.1.1 #
-netmask 255.255.255.0 # 子网掩码
-dns-nameservers 8.8.8.8  8.8.4.4 # DNS 解析
-</code></pre><h1 id="2-用户及权限管理"><a href="#2-用户及权限管理" class="headerlink" title="2. 用户及权限管理"></a>2. 用户及权限管理</h1><ul>
-<li><code>sudo adduser username</code> 新添加用户</li>
-<li><code>sudo passwd root</code> 设置 root 用户密码</li>
-<li><code>sudo vim /etc/sudoers</code> 赋予新用户 root 权限</li>
-</ul>
-<pre><code># User privilege specification
-root ALL=(ALL:ALL) ALL
-username ALL=(ALL:ALL) ALL   新添加此行即可
-</code></pre><ul>
-<li><code>chown user-name filename</code> 改变文件的所属用户</li>
-<li><code>chmod u+rwx g+r o+r filename</code> 用户添加读写运行权限，组成员添加读权限，其他用户添加读权限</li>
-<li><code>chmod a+w filename</code> 所有用户添加写权限</li>
-<li><code>chmod 777 filename</code> 所有用户添加读写运行权限</li>
-</ul>
-<h1 id="3-软件安装"><a href="#3-软件安装" class="headerlink" title="3.软件安装"></a>3.软件安装</h1><ul>
-<li><code>sudo apt-get update</code> 更新软件列表，在文件 /etc/apt/sources.list 中列出</li>
-<li><code>sudo apt-get upgrade</code> 更新软件</li>
-<li><code>sudo apt-get install software-name</code> 安装在软件库中的软件</li>
-<li><code>sudo apt-get remove</code> 卸载软件</li>
-<li><code>sudo apt-get purge</code> 卸载软件并删除配置文件</li>
-<li><code>sudo apt-get clean</code> 清除软件包缓存</li>
-<li><code>sudo apt-get autoclean</code> 清除缓存</li>
-<li><code>sudo apt-get autoremove</code> 清除不必要的依赖</li>
-<li><code>sudo apt-get install -f</code> 修复安装依赖问题</li>
-<li><code>sudo dpkg -i *.deb</code> 安装 deb 软件</li>
-<li><code>dpkg -l</code> 查看所有安装的软件</li>
-<li><code>dpkg -l | grep software-name</code> 配合 grep 命令可查看具体的某一个软件是否安装</li>
-<li><code>sudo echo &quot;google-chrome-stable hold&quot; | sudo dpkg --set-selections</code> 不更新某个软件</li>
-<li><code>sudo echo &quot;google-chrome-stable install&quot; | sudo dpkg --set-selections</code> 恢复更新某个软件</li>
-</ul>
-<h1 id="4-目录文件操作"><a href="#4-目录文件操作" class="headerlink" title="4. 目录文件操作"></a>4. 目录文件操作</h1><ul>
-<li><code>cd</code> 切换目录，<code>～</code>为家目录，<code>/</code>为根目录，<code>./</code>为当前目录</li>
-<li><code>cd ..</code> 切换到上级目录</li>
-<li><code>cd -</code> 切换到上一次所在的目录</li>
-<li><code>pwd</code> 查看当前所在目录</li>
-<li><code>ls</code> 查看当前目录下的文件夹和文件名，<code>-a</code>显示隐藏文件，<code>-l</code>显示文件详细信息</li>
-<li><code>mkdir directory-name</code> 新建文件夹</li>
-<li><code>rmdir directory-name</code> 删除文件夹(必须为空)</li>
-<li><code>rm -rf directory-name</code> 强制并递归删除文件夹</li>
-<li><code>cp src-file dst-file</code> 复制文件</li>
-<li><code>mv src-file dst-file</code> 移动文件</li>
-<li><code>ln -s src-file dst-file</code> 建立软链接</li>
-<li><code>find path -name string</code> 查找路经所在范围内满足字符串匹配的文件和目录</li>
-<li><code>cat filename</code> 显示文件内容</li>
-<li><code>head -n 2 filename</code> 显示文件前两行的内容</li>
-<li><code>tail -n 2 filename</code> 显示文件末尾两行的内容</li>
-</ul>
-<h1 id="5-终端快捷键"><a href="#5-终端快捷键" class="headerlink" title="5. 终端快捷键"></a>5. 终端快捷键</h1><ul>
-<li><code>ctrl + l</code> 清屏</li>
-<li><code>ctrl + c</code> 终止命令</li>
-<li><code>ctrl + d</code> 退出 shell</li>
-<li><code>ctrl + z</code> 将当前进程置于后台，fg 还原</li>
-<li><code>ctrl + r</code> 从命令历史中找</li>
-<li><code>ctrl + u</code> 清除光标到行首的字符（还有剪切功能）</li>
-<li><code>ctrl + w</code> 清除光标之前一个单词 （还有剪切功能）</li>
-<li><code>ctrl + k</code> 清除光标到行尾的字符（还有剪切功能）</li>
-<li><code>ctrl + y</code> 粘贴 Ctrl+u 或 Ctrl+k 剪切的内容</li>
-<li><code>ctrl + t</code> 交换光标前两个字符</li>
-<li><code>Alt + d</code> 由光标位置开始，往行尾删删除单词</li>
-<li><code>Alt + .</code> 使用上一条命令的最后一个参数</li>
-<li><code>Alt – b || ctrl + 左方向键</code> 往回(左)移动一个单词</li>
-<li><code>Alt – f || ctrl + 右方向键</code> - 往后(右)移动一个单词</li>
-<li><code>!!</code> 执行上一条命令。</li>
-</ul>
+        <p>##<br>我太难了</p>
 
       
        <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至 1207811450@qq.com </span>
@@ -591,12 +483,12 @@ username ALL=(ALL:ALL) ALL   新添加此行即可
 
 
 <div class="article_copyright">
-    <p><span class="copy-title">文章标题:</span>Ubuntu 常用命令大全</p>
+    <p><span class="copy-title">文章标题:</span>我真的太难了</p>
     
     <p><span class="copy-title">本文作者:</span><a href="javascript:void(0)" title="Wd">Wd</a></p>
-    <p><span class="copy-title">发布时间:</span>2019-09-01, 23:49:00</p>
-    <p><span class="copy-title">最后更新:</span>2019-09-04, 23:09:10</p>
-    <span class="copy-title">原始链接:</span><a class="post-url" href="/2019/09/01/Ubuntu-常用命令大全长期不定时更新/" title="Ubuntu 常用命令大全">http://yoursite.com/2019/09/01/Ubuntu-常用命令大全长期不定时更新/</a>
+    <p><span class="copy-title">发布时间:</span>2020-04-09, 20:13:15</p>
+    <p><span class="copy-title">最后更新:</span>2020-04-09, 20:14:42</p>
+    <span class="copy-title">原始链接:</span><a class="post-url" href="/2020/04/09/我真的太难了/" title="我真的太难了">http://yoursite.com/2020/04/09/我真的太难了/</a>
     <p>
         <span class="copy-title">版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
     </p>
