@@ -2,9 +2,9 @@
 <html>
 <head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="utf-8">
-  <title>SQL语法约定 | 坚持下去</title>
-  <meta name="keywords" content=" SQL , 语法约定 ">
-  <meta name="description" content="SQL语法约定 | 坚持下去">
+  <title>Scanner of Java | 坚持下去</title>
+  <meta name="keywords" content>
+  <meta name="description" content="Scanner of Java | 坚持下去">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="description" content="语法约定 每个SQL语句开始于新行。 每次缩进为2个字符。 每个语句的子句开始于新的缩进的行。SELECT au_fname, an_lnameFROM authorsORDER BY au_lname; SQL是不区分大小写的。对于SQL关键字（如SELECT，NULL和CHARACTER）使用大写；对于用户定于的值（如表、列和别名）使用小写。 当一行太窄而无法容纳一整行代码或输出时，将其分为两">
 <meta name="keywords" content="SQL,语法约定">
@@ -428,9 +428,9 @@
 </aside>
 <div class="post">
     <div class="pjax">
-        <article id="post-SQL语法约定" class="article article-type-post" itemscope itemprop="blogPost">
+        <article id="post-Scanner-of-Java" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <h1 class="article-title">SQL语法约定</h1>
+        <h1 class="article-title">Scanner of Java</h1>
     
     <div class="article-meta">
         
@@ -438,23 +438,15 @@
         
         <span class="book">
             
-                <a href="javascript:" data-rel="SQL">SQL</a>
+                <a href="javascript:" data-rel="Java">Java</a>
             
         </span>
         
-        
-        <span class="tag">
-            
-            <a href="javascript:" class="color4">SQL</a>
-            
-            <a href="javascript:" class="color5">语法约定</a>
-            
-        </span>
         
     </div>
     <div class="article-meta">
         
-        创建时间:<time class="date" title='更新时间: 2019-11-02 10:16:52'>2019-11-02 10:15</time>
+        创建时间:<time class="date" title='更新时间: 2020-04-15 01:10:00'>2020-04-15 00:18</time>
         
     </div>
     <div class="article-meta">
@@ -476,7 +468,7 @@
     
     <div class="toc-ref">
     
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#语法约定"><span class="toc-text">语法约定</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#标识符命名规则。"><span class="toc-text">标识符命名规则。</span></a></li></ol>
+        
     
 <style>
     .left-col .switch-btn,
@@ -491,21 +483,68 @@
 </div>
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="语法约定"><a href="#语法约定" class="headerlink" title="语法约定"></a>语法约定</h2><ol>
-<li>每个SQL语句开始于新行。</li>
-<li>每次缩进为2个字符。</li>
-<li>每个语句的子句开始于新的缩进的行。<br>SELECT au_fname, an_lname<br>FROM authors<br>ORDER BY au_lname;</li>
-<li>SQL是不区分大小写的。对于SQL关键字（如SELECT，NULL和CHARACTER）使用大写；对于用户定于的值（如表、列和别名）使用小写。</li>
-<li>当一行太窄而无法容纳一整行代码或输出时，将其分为两段或两段以上；箭头→表示行的继续。</li>
-</ol>
-<h2 id="标识符命名规则。"><a href="#标识符命名规则。" class="headerlink" title="标识符命名规则。"></a>标识符命名规则。</h2><ol>
-<li>可以长达128个字符。</li>
-<li>必须以字母开头。</li>
-<li>可以包含字母、数字和下划线（_）。</li>
-<li>不可以包含恐吓或特殊字符（如#、￥、&amp;、%或标点符号）‘</li>
-<li>不可以是保留关键字（除了被引号括起来的标识符以外）。</li>
-</ol>
-
+        <pre><code>import java.util.*;
+public class Scanner_inTest
+{
+    public static void main(String[] args)
+    {
+        Scanner in = new Scanner(System.in);
+        ArrayList &lt;Integer&gt; list = new ArrayList&lt;&gt;();
+        System.out.println(&quot;使用nxetInt()方法,并且输入为:&quot;);
+        for(int i = 0; i &lt; 5; i++)
+        {
+            list.add(in.nextInt());
+        }
+        System.out.print(&quot;输出为: &quot;);
+        System.out.println(list);
+        in.close();
+    }</code></pre><pre><code>import java.util.*;
+public class Scanner_inTest
+{
+    public static void main(String[] args)
+    {
+        Scanner in = new Scanner(System.in);
+        in.useDelimiter(&quot;,&quot;);
+        ArrayList &lt;Integer&gt; list = new ArrayList&lt;&gt;();
+        System.out.println(&quot;使用nxetInt()方法,并且输入为:&quot;);
+        for(int i = 0; i &lt; 5; i++)
+        {
+            list.add(in.nextInt());
+        }
+        System.out.print(&quot;输出为: &quot;);
+        System.out.println(list);
+        in.close();
+    }
+}</code></pre><pre><code>import java.util.*;
+public class Scanner_inTest
+{
+    public static void main(String[] args)
+    {
+        String s1, s2;
+        Scanner in = new Scanner(System.in);
+        System.out.println(&quot;请输入第一个字符串: &quot;);
+        s1 = in.next();
+        System.out.println(&quot;请输入第二个字符串: &quot;);
+        s2 = in.nextLine();
+        System.out.println(&quot;输入的字符串是: &quot; + s1 + s2);
+        in.close();
+    }
+}</code></pre><pre><code>import java.util.*;
+public class Scanner_inTest
+{
+    public static void main(String[] args)
+    {
+        String s1, s2;
+        Scanner in = new Scanner(System.in);
+        System.out.println(&quot;请输入第一个字符串: &quot;);
+        s1 = in.next();
+        in.nextLine();
+        System.out.println(&quot;请输入第二个字符串: &quot;);
+        s2 = in.nextLine();
+        System.out.println(&quot;输入的字符串是: &quot; + s1 + s2);
+        in.close();
+    }
+}</code></pre>
       
        <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至 1207811450@qq.com </span>
     </div>
@@ -518,12 +557,12 @@
 
 
 <div class="article_copyright">
-    <p><span class="copy-title">文章标题:</span>SQL语法约定</p>
+    <p><span class="copy-title">文章标题:</span>Scanner of Java</p>
     
     <p><span class="copy-title">本文作者:</span><a href="javascript:void(0)" title="Wd">Wd</a></p>
-    <p><span class="copy-title">发布时间:</span>2019-11-02, 10:15:30</p>
-    <p><span class="copy-title">最后更新:</span>2019-11-02, 10:16:52</p>
-    <span class="copy-title">原始链接:</span><a class="post-url" href="/2019/11/02/SQL语法约定/" title="SQL语法约定">http://yoursite.com/2019/11/02/SQL语法约定/</a>
+    <p><span class="copy-title">发布时间:</span>2020-04-15, 00:18:37</p>
+    <p><span class="copy-title">最后更新:</span>2020-04-15, 01:10:00</p>
+    <span class="copy-title">原始链接:</span><a class="post-url" href="/2020/04/15/Scanner-of-Java/" title="Scanner of Java">http://yoursite.com/2020/04/15/Scanner-of-Java/</a>
     <p>
         <span class="copy-title">版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
     </p>
