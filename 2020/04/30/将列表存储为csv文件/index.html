@@ -2,9 +2,9 @@
 <html>
 <head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="utf-8">
-  <title>Hello World | 坚持下去</title>
+  <title>将列表存储为csv文件 | 坚持下去</title>
   <meta name="keywords" content>
-  <meta name="description" content="Hello World | 坚持下去">
+  <meta name="description" content="将列表存储为csv文件 | 坚持下去">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="description" content="1. 首先再github上创建repository 2. 创建成功后看到下图，记住仓库地址 3. 下载git4. git4.1输入    git init  ,在当前项目的目录中生成本地的git管理(会发现在当前目录留下多了一个.git文件) 4.2输入    git add .     ,或者   git add --all     , 将项目上所有文件添加到仓库中，如果想添加某个特定的文件，只">
 <meta name="keywords" content="github,git">
@@ -475,19 +475,25 @@
 </aside>
 <div class="post">
     <div class="pjax">
-        <article id="post-hello-world" class="article article-type-post" itemscope itemprop="blogPost">
+        <article id="post-将列表存储为csv文件" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <h1 class="article-title">Hello World</h1>
+        <h1 class="article-title">将列表存储为csv文件</h1>
     
     <div class="article-meta">
         
         
+        
+        <span class="book">
+            
+                <a href="javascript:" data-rel="python">python</a>
+            
+        </span>
         
         
     </div>
     <div class="article-meta">
         
-        创建时间:<time class="date" title='更新时间: 2019-08-26 00:11:23'>2019-08-26 00:11</time>
+        创建时间:<time class="date" title='更新时间: 2020-04-30 22:20:54'>2020-04-30 21:58</time>
         
     </div>
     <div class="article-meta">
@@ -509,7 +515,7 @@
     
     <div class="toc-ref">
     
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Quick-Start"><span class="toc-text">Quick Start</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Create-a-new-post"><span class="toc-text">Create a new post</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Run-server"><span class="toc-text">Run server</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Generate-static-files"><span class="toc-text">Generate static files</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Deploy-to-remote-sites"><span class="toc-text">Deploy to remote sites</span></a></li></ol></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#主体"><span class="toc-text">主体</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#备注"><span class="toc-text">备注</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#查询当前工作路径"><span class="toc-text">查询当前工作路径</span></a></li></ol></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -524,16 +530,21 @@
 </div>
     <div class="article-entry" itemprop="articleBody">
       
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><pre><code class="bash">$ hexo new &quot;My New Post&quot;</code></pre>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><pre><code class="bash">$ hexo server</code></pre>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><pre><code class="bash">$ hexo generate</code></pre>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><pre><code class="bash">$ hexo deploy</code></pre>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
+        <h2 id="主体"><a href="#主体" class="headerlink" title="主体"></a>主体</h2><pre><code>import pandas as pd
+list = [[1,2,3],[4,5,6],[7,8,9]]
+name = [&#39;id&#39;, &#39;uid&#39;, &#39;time&#39;]
+test = pd.DataFrame(columns=name, data=list)
+test.to_csv(&#39;D:/test.csv&#39;)</code></pre><p>打开生成的csv文件，可以看到我们想要的数据<br><img src="/2020/04/30/将列表存储为csv文件/111.PNG" alt></p>
+<h2 id="备注"><a href="#备注" class="headerlink" title="备注"></a>备注</h2><h3 id="查询当前工作路径"><a href="#查询当前工作路径" class="headerlink" title="查询当前工作路径"></a>查询当前工作路径</h3><pre><code>import os
+os.getcwd() #获取当前工作路径</code></pre><pre><code># 分隔符sep:Field delimiter for the output file(default &quot;,&quot;)
+dt.to_csv(&#39;D:/test.csv&#39;,sep=&#39;?&#39;) #使用?分隔需要保存的数据，如果不写，默认是 &#39;,&#39;
 
+# 替换空值 na_rep: A string representation of a missing value (default &#39; &#39;)
+dt.to_csv(&#39;D:/test.csv&#39;,na_rep=&#39;NA&#39;) #确实值保存为NA，如果不写，默认是空
+
+# 格式 float_format: Format string for floating point numbers
+dt.to_csv(&#39;D:/test.csv&#39;,float_format=&#39;%.2f&#39;) #保留两位小数
+</code></pre>
       
        <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至 1207811450@qq.com </span>
     </div>
@@ -546,12 +557,12 @@
 
 
 <div class="article_copyright">
-    <p><span class="copy-title">文章标题:</span>Hello World</p>
+    <p><span class="copy-title">文章标题:</span>将列表存储为csv文件</p>
     
     <p><span class="copy-title">本文作者:</span><a href="javascript:void(0)" title="Wd">Wd</a></p>
-    <p><span class="copy-title">发布时间:</span>2019-08-26, 00:11:23</p>
-    <p><span class="copy-title">最后更新:</span>2019-08-26, 00:11:23</p>
-    <span class="copy-title">原始链接:</span><a class="post-url" href="/2019/08/26/hello-world/" title="Hello World">wd03074.github.io/2019/08/26/hello-world/</a>
+    <p><span class="copy-title">发布时间:</span>2020-04-30, 21:58:29</p>
+    <p><span class="copy-title">最后更新:</span>2020-04-30, 22:20:54</p>
+    <span class="copy-title">原始链接:</span><a class="post-url" href="/2020/04/30/将列表存储为csv文件/" title="将列表存储为csv文件">wd03074.github.io/2020/04/30/将列表存储为csv文件/</a>
     <p>
         <span class="copy-title">版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
     </p>
